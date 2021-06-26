@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEON</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            height: 100vh;
+            width: 100%;
+            display: grid;
+            font-family: cursive;
+            background: rgb(0, 0, 0);
+        }
+        .neon-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4em;            
+        }
+        .neon-button button {
+            background: rgb(0, 0, 0);
+            color: #FF15C2;
+            border: #FF15C2  4px solid;
+            border-radius: 2.6em;
+            padding: 0.25em 1em;
+            text-shadow: 0 0 1em #FF15C2;
+            box-shadow: inset 0 0 0.5em #FF15C2,  0 0 0.5em #FF15C2;
+            position: relative;
+            transition: background 1s linear;
+            
+        }
+        
+
+        .neon-button button::before {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            bottom: 0em;
+            background: #FF15C2;
+            width: 100%;
+            height: 100%;
+            filter: blur(1.3em);
+            transform: perspective(3em) rotateX(50deg) scale(1,0.5);
+            opacity: 0.5;
+            transition: opacity 0.9s linear;
+        }
+
+        .neon-button button::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0em;
+            background: #FF15C2;
+            border-radius: 2.8em;
+            box-shadow: 0px 0px 0.3em 0.3em #ff15c2;
+            opacity: 0;
+            transition: opacity 1s cubic-bezier(0.4, 0, 1, 1);
+            z-index: -1;
+        }
+
+        .neon-button button:hover, .neon-button button:focus {
+            color: rgb(14, 20, 20);
+            background: #FF15C2;
+            text-shadow: none;
+            outline: none;
+            outline: none;
+            
+        }
+
+        .neon-button button:hover::before,  .neon-button button:focus::before{
+            opacity: 1;
+        }
+        .neon-button button:hover::after{
+            opacity: 1;
+        }
+    </style>
+</head>
+    <div class="neon-button">
+        <button>Neon</button>
+    </div>
+
+<body>
+    
+</body>
+</html>
